@@ -1,0 +1,30 @@
+{
+  "name": "Lab-09-API-ServerVir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/401-advanced-javascript-Nawal/Lab-09-API-ServerVir.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/401-advanced-javascript-Nawal/Lab-09-API-ServerVir/issues"
+  },
+  "homepage": "https://github.com/401-advanced-javascript-Nawal/Lab-09-API-ServerVir#readme",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "mongoose": "^5.8.10",
+    "morgan": "^1.9.1"
+  }
+}
