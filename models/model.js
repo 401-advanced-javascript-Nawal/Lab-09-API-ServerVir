@@ -31,7 +31,7 @@ class Model {
      * @param {string} id 
      * @param {object} Rec 
      */
-  update(id, Rec) {
+  update(id,Rec) {
     return this.schema.findByIdAndUpdate(id, Rec, { new: true });
   } // end of update method
 

@@ -41,9 +41,9 @@ router.param('model', modelName);
 // dynamic routes  
 router.get('/api/v1/:model', getAll);
 router.get('/api/v1/:model/:id', getOne);
-router.post('/api/v1/:model', postOne);
-router.update('/api/v1/:model/:id', updateOne);
-router.delete('/api/v1/:model/:id', deleteOne);
+router.post('api/v1/:model',postOne);
+// router.update('/api/v1/:model/:id', updateOne);
+// router.delete('/api/v1/:model/:id', deleteOne);
 
 
 function getAll(req, res, next) {
@@ -51,7 +51,7 @@ function getAll(req, res, next) {
     req.model.get()
         .then(data => {
             let count = data.length;
-            res.json({ count, data });
+            res.status(200).json({ count, data });
         })
         .catch(next);
 } // end of getAll function 
@@ -60,7 +60,7 @@ function getOne(req, res, next) {
     let id = req.param.id;
     req.model.get(id)
         .then(data => {
-            res.json(data);
+            res.status(200).json(data);
         })
         .catch(next);
 } // end of getOne function
@@ -69,7 +69,7 @@ function postOne(req, res, next) {
     req.model.post(req.body)
         .then( data =>
             {
-                res.json(data);
+                res.status(201).json(data);
             })
             .catch(next);
 } // end of postOne function
@@ -79,7 +79,7 @@ function updateOne(req, res, next) {
     req.model.update(id,req.body)
         .then( data =>
             {
-                res.json(data);
+                res.status(200).json(data);
             })
             .catch(next);
 } // end of updateOne function
@@ -89,7 +89,7 @@ function deleteOne(req, res, next) {
     req.model.delete(id)
         .then( data =>
             {
-                res.json(data);
+                res.status(200).json(data);
             })
             .catch(next);
 } // end of deleteOne function

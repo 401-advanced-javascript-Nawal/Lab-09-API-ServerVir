@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 require('../products-mod/products-schema.js');
 
 const categories = mongoose.Schema({
-  name: { type: String, required: true },
+  name: { type: 'string', required: true },
 }, {toObject : { virtuals: true},toJSON : {virtuals :true}});
 
 // collection/model name 
