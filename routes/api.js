@@ -9,10 +9,10 @@ const proMod = require('../models/products-mod/products-model.js');
 // makes the products and categories route generic 
 function modelName(req,res,next){
     // make the model name generic globally 
-    let modelN = req.params.model;
+    let model = req.params.model;
 
     // to modify the middleware request 
-    switch(modelN){
+    switch(model){
         // api/v1/modelN === api/v1/categories 
         case "catMod" : 
         req.model = catMod;
@@ -37,3 +37,20 @@ function modelName(req,res,next){
 
 // request params ( :modelN )
 router.param('model',modelName);
+
+// dynamic routes  
+router.get('api/v1/:model',getAll)
+router.get('api/v1/:model/:id',getOne)
+router.post('api/v1/:model',postOne)
+
+function getAll(req,res,next){
+
+} // end of getAll function 
+
+function getOne(req,res,next){
+
+} // end of getOne function
+
+function postOne(req,res,next){
+
+} // end of postOne function
