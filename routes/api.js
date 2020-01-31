@@ -41,7 +41,7 @@ router.param('model', modelName);
 // dynamic routes  
 router.get('/api/v1/:model', getAll);
 router.get('/api/v1/:model/:id', getOne);
-router.post('api/v1/:model',postOne);
+router.post('/api/v1/:model',postOne);
 // router.update('/api/v1/:model/:id', updateOne);
 // router.delete('/api/v1/:model/:id', deleteOne);
 
@@ -66,6 +66,7 @@ function getOne(req, res, next) {
 } // end of getOne function
 
 function postOne(req, res, next) {
+    console.log('req.body : ', req.body);
     req.model.post(req.body)
         .then( data =>
             {

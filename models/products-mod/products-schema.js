@@ -15,8 +15,8 @@ products.virtual('realCat', {
   // collection/model name (categories)
   ref: 'categories',
   // category inside products schema 
-  localField: 'category',
-  foreignField: 'name',
+  localField: 'name',
+  foreignField: 'category',
   justOne: false,
 }); // end of mock products 
 
