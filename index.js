@@ -1,0 +1,12 @@
+'use strict';
+
+const server = require('./lib/server.js');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+dotenv.config();
+//const MONGOOSE_URI = 'mongodb://localhost:27017/class08';
+
+mongoose.connect(process.env.MONGOOSE_URI, { useNewUrlParser: true, useCreateIndex:true,useUnifiedTopology:true });
+
+server.start();
