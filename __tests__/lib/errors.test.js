@@ -8,6 +8,14 @@ describe('api server', () => {
 
  /**************** Errors ****************/
 
+ it('500 Error ', () => {
+  return mockRequest
+    .get('/gen-error')
+    .then(data => {
+      expect(data.status).toBe(500);
+    }).catch(e => console.error(e));
+}); // 500 
+
 it('404 Error , Invalid route ', () => {
   return mockRequest
     .get('/main')

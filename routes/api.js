@@ -110,8 +110,8 @@ function notFoucnError(req, res, next) {
   res.json({ error: ' Not Found ' });
 } // end of notFoucnError function 
 
-// app.get('/gen-error',timestamp(), (req, res) => {
-//   throw new Error(' Real-Time Error ');
-// }); // end of get error  
+router.get('/gen-error', (req, res) => {
+  throw new Error(' Real-Time Error ');
+}); // end of get error  
 
 module.exports = router;
