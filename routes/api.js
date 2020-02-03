@@ -45,7 +45,12 @@ router.post('/api/v1/:model',postOne);
 // router.update('/api/v1/:model/:id', updateOne);
 // router.delete('/api/v1/:model/:id', deleteOne);
 
-
+/**
+ * retrieve all data 
+ * @param {object} req 
+ * @param {object} res 
+ * @param {MM} next 
+ */
 function getAll(req, res, next) {
 
   req.model.get()
@@ -56,6 +61,12 @@ function getAll(req, res, next) {
     .catch(next);
 } // end of getAll function 
 
+/**
+ * retreive one item 
+ * @param {object} req 
+ * @param {object} res 
+ * @param {MM} next 
+ */
 function getOne(req, res, next) {
   let id = req.param.id;
   req.model.get(id)
@@ -65,6 +76,12 @@ function getOne(req, res, next) {
     .catch(next);
 } // end of getOne function
 
+/**
+ * create new item 
+ * @param {object} req 
+ * @param {object} res 
+ * @param {MM} next 
+ */
 function postOne(req, res, next) {
   console.log('req.body : ', req.body);
   req.model.post(req.body)
@@ -75,6 +92,12 @@ function postOne(req, res, next) {
     .catch(next);
 } // end of postOne function
 
+/**
+ * 
+ * @param {Object} req 
+ * @param {object} res 
+ * @param {MM} next 
+ */
 function updateOne(req, res, next) {
   let id = req.param.id;
   req.model.update(id,req.body)
@@ -85,6 +108,12 @@ function updateOne(req, res, next) {
     .catch(next);
 } // end of updateOne function
 
+/**
+ * remove one item 
+ * @param {Object} req 
+ * @param {object} res 
+ * @param {MM} next 
+ */
 function deleteOne(req, res, next) {
   let id = req.param.id;
   req.model.delete(id)
@@ -97,19 +126,34 @@ function deleteOne(req, res, next) {
 
 
 /************************************************ Errors **************************************************************/
-
+/**
+ * 
+ * @param {Object} error 
+ * @param {Object} req 
+ * @param {Object} res 
+ * @param {MM} next 
+ */
 function errorHander(error, req, res, next) {
   res.status(500);
   res.statusMsg = 'Server Error ';
   res.json({ error: error });
 } // end of errorHander function 
 
+/**
+ * 
+ * @param {Object} req 
+ * @param {Object} res 
+ * @param {MM} next 
+ */
 function notFoucnError(req, res, next) {
   res.status(404);
   res.statusMsg = ' Not Found ';
   res.json({ error: ' Not Found ' });
 } // end of notFoucnError function 
 
+/**
+ * real time error 
+ */
 router.get('/gen-error', (req, res) => {
   throw new Error(' Real-Time Error ');
 }); // end of get error  

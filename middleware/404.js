@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * not found error 
+ */
 module.exports = (req,res) => {
   res.status(404);
   res.statusMessage = 'Resource Not Found';

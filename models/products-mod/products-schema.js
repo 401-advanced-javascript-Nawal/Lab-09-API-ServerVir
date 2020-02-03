@@ -11,6 +11,9 @@ const products = mongoose.Schema({
   category: { type: String, required: true },
 }, { toObject: { virtuals: true }, toJSON: { virtuals: true } });
 
+/**
+ * virtual modleing for categories
+ */
 products.virtual('realCat', {
   // collection/model name (categories)
   ref: 'categories',
@@ -20,6 +23,9 @@ products.virtual('realCat', {
   justOne: false,
 }); // end of mock products 
 
+/**
+ * the mock(pre) function to retreive the database 
+ */
 // do it before starting 
 products.pre('findOne', function () {
   try {

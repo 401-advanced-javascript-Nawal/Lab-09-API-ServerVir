@@ -8,6 +8,9 @@ const categories = mongoose.Schema({
   name: { type: 'string', required: true },
 }, {toObject : { virtuals: true},toJSON : {virtuals :true}});
 
+/**
+ * virtual modleing for categories 
+ */
 // collection/model name 
 categories.virtual('realPro', {
   // collection/model name (categories)
@@ -19,6 +22,9 @@ categories.virtual('realPro', {
 }); // end of mock categories 
 
 
+/**
+ * the mock(pre) function to retreive the database 
+ */
 // do it before starting 
 categories.pre('findOne', function () {
   try {
