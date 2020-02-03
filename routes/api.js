@@ -14,13 +14,13 @@ function modelName(req, res, next) {
   // to modify the middleware request 
   switch (model) {
   // api/v1/modelN === api/v1/categories 
-  case 'catMod':
+  case 'categories':
     req.model = catMod;
     next();
     return;
 
     // api/v1/modelN === api/v1/produts 
-  case 'proMod':
+  case 'products':
     req.model = proMod;
     next();
     return;

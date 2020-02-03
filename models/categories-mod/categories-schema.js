@@ -13,8 +13,8 @@ categories.virtual('realPro', {
   // collection/model name (categories)
   ref : 'products',
   // name inside categories schema 
-  localField : 'name',
-  foreignField : 'category',
+  localField : 'category',
+  foreignField : 'name',
   justOne : false,
 }); // end of mock categories 
 
