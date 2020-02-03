@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 const catsch = require('./models/categories-mod/categories-schema.js');
 const prosch = require('./models/products-mod/products-schema.js');
 
-const MONGOOSE_URI='mongodb://localhost:27017/serverVir'
+const MONGOOSE_URI='mongodb://localhost:27017/serverVir';
 
 dotenv.config();
 //const MONGOOSE_URI = 'mongodb://localhost:27017/class08';
