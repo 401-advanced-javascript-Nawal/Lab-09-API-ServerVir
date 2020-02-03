@@ -95,4 +95,23 @@ function deleteOne(req, res, next) {
     .catch(next);
 } // end of deleteOne function
 
+
+/************************************************ Errors **************************************************************/
+
+function errorHander(error, req, res, next) {
+  res.status(500);
+  res.statusMsg = 'Server Error ';
+  res.json({ error: error });
+} // end of errorHander function 
+
+function notFoucnError(req, res, next) {
+  res.status(404);
+  res.statusMsg = ' Not Found ';
+  res.json({ error: ' Not Found ' });
+} // end of notFoucnError function 
+
+// app.get('/gen-error',timestamp(), (req, res) => {
+//   throw new Error(' Real-Time Error ');
+// }); // end of get error  
+
 module.exports = router;
